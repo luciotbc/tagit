@@ -1,0 +1,239 @@
+/* ------------------------------------------------ GLOBAL */
+body {
+	margin: 0px;
+	padding: 0px;
+	clear: both;
+}
+
+/* ------------------------------------------------ INDEX.jsp */
+/* MENU */
+#index_menu {
+	border-bottom-style: solid;
+	height: 80px;
+	background-color: #60A9EB;
+}
+
+/* LOGO */
+#index_logo a {
+	float: left;
+	padding: 15px 0px 0px 20px;
+}
+
+/* LOGIN BOX */
+#login_box {
+	float: right;
+	text-align: left;
+	width: 500px;
+}
+
+#login_box label {
+	color: #FFF;
+	text-align: left;
+}
+
+#login_box .text_box {
+	width: 210px;
+}
+
+#login_box .button {
+	background: #2B78E4;
+	border-color: #000;
+	border-style: solid;
+	color: #FFF;
+	text-align: left;
+}
+
+/* CONTENT */
+#content {
+	margin: 5px 5px 5px 5px;
+}
+
+#main {
+	border-style: solid;
+	margin: 5px 5px 5px 5px;
+	padding: 5px 5px 5px 5px;
+	float: left;
+}
+
+/* REGISTER */
+#register {
+	border-style: solid;
+	float: right;
+	width: 370px;
+	margin: 5px 5px 5px 5px;
+	padding: 5px 5px 5px 5px;
+}
+
+#register .label{
+	float: left;
+	text-align: right;
+	margin: 7px 0px 5px 0px;
+	width: 150px;
+}
+
+#register p {
+	float:right;
+	margin: 0px 0px 5px 0px;
+	font-size: 15px;
+	padding-left: 40px;
+	width: 210px;
+}
+
+#register input {
+	float: right;
+	margin: 5px 0px 5px 0px;
+	width: 210px;
+}
+
+#register .button {
+	background: #66CD00;
+	border-color: #000000;
+	border-style: solid;
+	color: #FFF;
+	float: right;
+	margin: 5px 0px 5px 0px;
+	width: 216px;
+}
+
+#register_alert {
+	float: inherit;
+	text-align: justify;
+	font-size: 10px;
+}
+
+/* ------------------------------------------------ HOME.jsp */
+/* HOME */
+
+.add_evaluation_link {
+	background: #66CD00;
+	border-color: #000000;
+	border-style: solid;
+	color: #FFF;
+	float: right;
+	font-size: 20px;
+	text-decoration: none;
+	padding: 5px 5px 5px 5px;
+	margin: -60px 20px 5px 0px;
+	
+}
+
+.evaluation {
+	clear: both;
+}
+
+.evaluation_video {
+	float: left;
+}
+
+.evaluation_info {
+	float: left;
+}
+
+.evaluation_ico{
+	float: right;
+}
+
+.evaluation_ico, li{
+	list-style: none;
+}
+
+/* ------------------------------------------------ EVALUATION/ADD.jsp */
+/* EVALUATION/ADD */
+
+#evaluation_add .label {
+	float: left;
+	text-align: right;
+	margin: 7px 0px 5px 0px;
+	width: 200px;
+}
+
+#evaluation_add input , textarea{
+	float: right;
+	margin: 5px 0px 5px 0px;
+	width: 500px;
+}
+#evaluation_add .button {
+	background: #66CD00;
+	border-color: #000000;
+	border-style: solid;
+	color: #FFF;
+	margin: 5px 0px 5px 0px;
+}
+/* ------------------------------------------------ INCLUDES */
+/*---------------------------- FOOTER.jsp */
+#footer {
+	border-top: solid;
+	border-width: 1px;
+	
+	height: 40px;
+	margin: 0px 20px 0px 20px;
+	padding-top: 5px;
+}
+
+#footer_links {
+	float: right;
+	text-align: right;
+}
+
+#footer_license {
+	float: left;
+}
+/*---------------------------- MENUBAR.jsp */
+/* MENUBAR */
+#menubar {
+	border-bottom-style: solid;
+	height: 40px;
+	background-color: #60A9EB;
+}
+
+/* LOGO */
+#logo a {
+	float: left;
+	padding: 15px 0px 0px 20px;
+}
+
+/* MENU */
+#menu {
+	border: none;
+	float: right;
+	margin: 10px;
+}
+
+#menu li {
+	list-style: none;
+	margin: 0;
+	display: inline;
+}
+
+#menu li a {
+	height: 1px; /* IE5.0 bug */
+	padding: 5px 5px;
+	margin: 0;
+	border: 1px solid #000;
+	background: #2B78E4;
+	text-decoration: none;
+}
+
+#menu li a:link {
+	color: #fff;
+}
+
+#menu li a:visited {
+	color: #fff;
+}
+
+#menu li a:hover a:active{
+	background: #FFF;
+	color: #2B78E4;
+	border-color: #2B78E4;
+}
+/*---------------------------- MSG_ERROR.jsp */
+/* MSG_ERROR */
+#msg_error li {
+	color: red;
+}
+/*---------------------------- MSG_FLASH.jsp */
+/* MSG_FLASH */
+#msg_flash li {
+	color: blue;
+}

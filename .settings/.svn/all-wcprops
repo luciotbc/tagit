@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 25
+/svn/!svn/ver/1/.settings
+END
+org.eclipse.wst.xsl.core.prefs
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/1/.settings/org.eclipse.wst.xsl.core.prefs
+END
+com.google.gwt.eclipse.core.prefs
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/1/.settings/com.google.gwt.eclipse.core.prefs
+END
+com.google.appengine.eclipse.core.prefs
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/1/.settings/com.google.appengine.eclipse.core.prefs
+END
+org.eclipse.ltk.core.refactoring.prefs
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/1/.settings/org.eclipse.ltk.core.refactoring.prefs
+END
+com.google.gdt.eclipse.core.prefs
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/1/.settings/com.google.gdt.eclipse.core.prefs
+END

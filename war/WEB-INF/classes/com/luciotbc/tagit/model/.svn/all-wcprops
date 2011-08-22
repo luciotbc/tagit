@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/svn/!svn/ver/1/src/com/luciotbc/tagit/model
+END
+Tagging.java
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/1/src/com/luciotbc/tagit/model/Tagging.java
+END
+Evaluation.java
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/1/src/com/luciotbc/tagit/model/Evaluation.java
+END
+Tag.java
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/1/src/com/luciotbc/tagit/model/Tag.java
+END
+Entity.java
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/1/src/com/luciotbc/tagit/model/Entity.java
+END
+TagType.java
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/1/src/com/luciotbc/tagit/model/TagType.java
+END
+User.java
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/!svn/ver/1/src/com/luciotbc/tagit/model/User.java
+END

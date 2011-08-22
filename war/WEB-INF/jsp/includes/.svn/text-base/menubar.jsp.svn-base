@@ -1,0 +1,12 @@
+<div id="menubar">
+	<div id="logo">
+		<a href="/">Tag-It</a>
+	</div>
+	<lu id="menu">
+		<li>
+			<a href="/home">Minhas Avaliações</a>
+			<a href="/profile">Perfil</a>
+			<a href="/logout">Sair</a>
+		</li>
+	</lu>
+</div>

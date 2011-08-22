@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/!svn/ver/1/src/com/luciotbc/tagit/controller
+END
+UserController.java
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/1/src/com/luciotbc/tagit/controller/UserController.java
+END
+EvaluationController.java
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/1/src/com/luciotbc/tagit/controller/EvaluationController.java
+END
+IndexController.java
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/1/src/com/luciotbc/tagit/controller/IndexController.java
+END
+HomeController.java
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/1/src/com/luciotbc/tagit/controller/HomeController.java
+END
