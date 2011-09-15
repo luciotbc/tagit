@@ -28,11 +28,11 @@
 			</tr>
 			<tr>
 				<td><label class="label" for="appDescription">Descrição da aplicação:</label></td>
-				<td><textarea id="appDescription" class="text_box" type="text" title="Descrição da aplicação" name="evaluation.appDescription"></textarea></td>
+				<td><textarea id="appDescription" class="text_box" style="width: 502px;" title="Descrição da aplicação" name="evaluation.appDescription"></textarea></td>
 			</tr>
 			<tr>
 				<td><label class="label" for="goalEvaluation">Objetivo da avaliação:</label></td>
-				<td><textarea id="goalEvaluation" class="text_box" type="text" title="Objetivo da aplicação" name="evaluation.goalEvaluation"></textarea></td>
+				<td><textarea id="goalEvaluation" class="text_box" style="width: 502px;" title="Objetivo da aplicação" name="evaluation.goalEvaluation"></textarea></td>
 			</tr>
 			<tr>
 				<td><label class="label" for="video">Link para o vídeo no YouTube:</label></td>
@@ -40,7 +40,7 @@
 			</tr>
 			<tr>
 				<td></td>
-				<td><input id="button_save" class="button" type="submit" title="Salvar avaliação" value="Salvar avaliação"></td>
+				<td><input id="button_save" class="button" style="width: 505px;" type="submit" title="Salvar avaliação" value="Salvar avaliação"></td>
 			</tr>
 		</table>
 		</form>

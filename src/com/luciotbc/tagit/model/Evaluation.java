@@ -2,12 +2,10 @@ package com.luciotbc.tagit.model;
 
 import java.util.List;
 
-import javax.persistence.CascadeType;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
+import javax.persistence.Transient;
 
 @javax.persistence.Entity
 public class Evaluation implements Entity {
@@ -23,10 +21,10 @@ public class Evaluation implements Entity {
 	private String goalEvaluation;
 	private String video;
 	private Long moderate;
-	@OneToMany(cascade = CascadeType.ALL, fetch=FetchType.EAGER)
-	private List<Long> evaluators;
-
-	//	private List<Tagging> tagging;
+	@Transient
+	private List<User> evaluators;
+	@Transient
+	private List<Tagging> tagging;
 
 	public Long getId() {
 		return id;
@@ -88,11 +86,19 @@ public class Evaluation implements Entity {
 		this.moderate = moderate;
 	}
 
-	public List<Long> getEvaluators() {
+	public List<User> getEvaluators() {
 		return evaluators;
 	}
 
-	public void setEvaluators(List<Long> evaluators) {
+	public void setEvaluators(List<User> evaluators) {
 		this.evaluators = evaluators;
+	}
+
+	public List<Tagging> getTagging() {
+		return tagging;
+	}
+
+	public void setTagging(List<Tagging> tagging) {
+		this.tagging = tagging;
 	}
 }

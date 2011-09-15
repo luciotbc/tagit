@@ -14,6 +14,7 @@ import br.com.caelum.vraptor.view.Results;
 
 import com.luciotbc.tagit.dao.gae.DAO;
 import com.luciotbc.tagit.i18n.I18nMessages;
+import com.luciotbc.tagit.intercepts.Restrict;
 import com.luciotbc.tagit.model.User;
 import com.luciotbc.tagit.util.Encrypt;
 import com.luciotbc.tagit.util.Validators;
@@ -34,6 +35,7 @@ public class UserController {
 		this.req = request;
 	}
 
+	@Restrict
 	@Path("/user/show/{id}")
 	public void show(Long id) {
 		User user = dao.findById(User.class, id);
@@ -50,6 +52,7 @@ public class UserController {
 		}
 	}
 	
+	@Restrict
 	@Path({"/user/show","/profile"})
 	public void show() {
 		User user = getUser();
@@ -67,6 +70,7 @@ public class UserController {
 		}
 	}
 	
+	@Restrict
 	@Path({"/user/edit", "/profile/edit"})
 	public void edit() {
 		User user = getUser();
@@ -78,12 +82,12 @@ public class UserController {
 		// redireciona p‡gina
 		if (validator.hasErrors()) {
 			validator.onErrorUse(Results.logic()).redirectTo(IndexController.class).index();
-			//validator.onErrorSendBadRequest();
 		} else {
 			result.include("user", user);
 		}
 	}
 	
+	@Restrict
 	@Path("/user/save")
 	public void save(User user, String password) {
 

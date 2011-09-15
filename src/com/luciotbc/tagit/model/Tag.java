@@ -1,11 +1,13 @@
 package com.luciotbc.tagit.model;
 
-import java.sql.Timestamp;
-
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
+/**
+ * @author luciocharallo
+ *
+ */
 @javax.persistence.Entity
 public class Tag implements Entity {
 
@@ -13,52 +15,50 @@ public class Tag implements Entity {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-	private TagType tag;
-	private Timestamp startTime;
-	private Timestamp endTime;
+	private Long idTagging;
+	private int tag;
+	//private TagType tag;
+	private String startTime;
+	private String endTime;
 	private String observations;
-
+	
 	public Long getId() {
 		return id;
 	}
-
 	public void setId(Long id) {
 		this.id = id;
 	}
-
-	public static long getSerialversionuid() {
-		return serialVersionUID;
+	public Long getIdTagging() {
+		return idTagging;
 	}
-
-	public TagType getTag() {
+	public void setIdTagging(Long idTagging) {
+		this.idTagging = idTagging;
+	}
+	public int getTag() {
 		return tag;
 	}
-
-	public void setTag(TagType tag) {
+	public void setTag(int tag) {
 		this.tag = tag;
 	}
-
-	public Timestamp getStartTime() {
+	public String getStartTime() {
 		return startTime;
 	}
-
-	public void setStartTime(Timestamp startTime) {
+	public void setStartTime(String startTime) {
 		this.startTime = startTime;
 	}
-
-	public Timestamp getEndTime() {
+	public String getEndTime() {
 		return endTime;
 	}
-
-	public void setEndTime(Timestamp endTime) {
+	public void setEndTime(String endTime) {
 		this.endTime = endTime;
 	}
-
 	public String getObservations() {
 		return observations;
 	}
-
 	public void setObservations(String observations) {
 		this.observations = observations;
+	}
+	public static long getSerialversionuid() {
+		return serialVersionUID;
 	}
 }

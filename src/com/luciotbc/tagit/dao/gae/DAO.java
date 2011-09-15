@@ -1,5 +1,6 @@
 package com.luciotbc.tagit.dao.gae;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.EntityManager;
@@ -8,15 +9,15 @@ import javax.persistence.Query;
 
 import com.luciotbc.tagit.model.Entity;
 import com.luciotbc.tagit.model.Evaluation;
+import com.luciotbc.tagit.model.Tag;
+import com.luciotbc.tagit.model.Tagging;
 import com.luciotbc.tagit.model.User;
 
 import br.com.caelum.vraptor.ioc.Component;
 
 @Component
 public class DAO{
-	
-	//CADA DAO DE UMA SESSÌO ƒ ARMAZENADO EM UMA THREAD!
-	//XXX REMOVER ISSO E TRABALHAR DE FORMA MAIS SIMPLES
+
 	private static final ThreadLocal<EntityManager> ENTITY_MANAGER_STORE = new ThreadLocal<EntityManager>();
 
 	public static void setEntityManager(EntityManager em) {
@@ -81,6 +82,7 @@ public class DAO{
 		}
 	}
 
+	@SuppressWarnings("unchecked")
 	public List<Evaluation> findAllEvaluationsByModerator(Long id) {
 		EntityManager em = getEntityManager();
 		Query query = em.createQuery("SELECT FROM " + Evaluation.class.getName() + " WHERE moderate = :moderate");
@@ -92,4 +94,99 @@ public class DAO{
 		}
 	}
 	
+	@SuppressWarnings("unchecked")
+	public List<User> findUsersByEvaluation(Long idEvaluation) {
+		EntityManager em = getEntityManager();
+		Query query = em.createQuery("SELECT FROM " + Tagging.class.getName() + " WHERE idEvaluation = :idEvaluation");
+		query.setParameter("idEvaluation", idEvaluation);
+		try {
+			List<Tagging> tagging = (List<Tagging>) query.getResultList();
+			ArrayList<User> users = new ArrayList();
+			for (Tagging evaluationUsersTemp : tagging) {
+				users.add(findById(User.class, evaluationUsersTemp.getIdUser()));
+			}
+			 return users;
+		} catch(NoResultException e) {
+			return null;
+		}
+	}
+	
+	@SuppressWarnings("unchecked")
+	public Tagging evaluationUsersfindByEvaluationIdAndUserID(Long idEvaluation, Long idUser) {
+		EntityManager em = getEntityManager();
+		Query query = em.createQuery("SELECT FROM " + Tagging.class.getName() + " WHERE idEvaluation = :idEvaluation");
+		query.setParameter("idEvaluation", idEvaluation);
+		try {
+			List<Tagging> tagging = (List<Tagging>) query.getResultList();
+			for (Tagging evaluationUsersTemp : tagging) {
+				if(evaluationUsersTemp.getIdUser() == idUser){
+					return evaluationUsersTemp;
+				}
+			}
+			return null;
+		} catch(NoResultException e) {
+			return null;
+		}
+	}
+	
+	@SuppressWarnings("unchecked")
+	public List<Evaluation> findEvaluationByUserId(Long idUser) {
+		EntityManager em = getEntityManager();
+		Query query = em.createQuery("SELECT FROM " + Tagging.class.getName() + " WHERE idUser = :idUser");
+		query.setParameter("idUser", idUser);
+		try {
+			List<Tagging> tagging = (List<Tagging>) query.getResultList();
+			ArrayList<Evaluation> evaluations = new ArrayList();
+			for (Tagging evaluationUsersTemp : tagging) {
+				evaluations.add(findById(Evaluation.class, evaluationUsersTemp.getIdEvaluation()));
+			}
+			 return evaluations;
+		} catch(NoResultException e) {
+			return null;
+		}
+	}
+	
+	@SuppressWarnings("unchecked")
+	public List<Tagging> evaluationUsersfindByEvaluationId(Long idEvaluation) {
+		EntityManager em = getEntityManager();
+		Query query = em.createQuery("SELECT FROM " + Tagging.class.getName() + " WHERE idEvaluation = :idEvaluation");
+		query.setParameter("idEvaluation", idEvaluation);
+		try {
+			List<Tagging> tagging = (List<Tagging>) query.getResultList();
+			return tagging;
+		} catch(NoResultException e) {
+			return null;
+		}
+	}
+	
+	@SuppressWarnings("unchecked")
+	public Tagging taggingFindByEvaluationIdAndUserID(Long idEvaluation, Long idUser) {
+		EntityManager em = getEntityManager();
+		Query query = em.createQuery("SELECT FROM " + Tagging.class.getName() + " WHERE idEvaluation = :idEvaluation");
+		query.setParameter("idEvaluation", idEvaluation);
+		try {
+			List<Tagging> taggings = (List<Tagging>) query.getResultList();
+			for (Tagging taggingTemp : taggings) {
+				if(taggingTemp.getIdUser() == idUser){
+					return taggingTemp;
+				}
+			}
+			return null;
+		} catch(NoResultException e) {
+			return null;
+		}
+	}
+
+	@SuppressWarnings("unchecked")
+	public List<Tag> findTagsByTagging(Long idTagging) {
+		EntityManager em = getEntityManager();
+		Query query = em.createQuery("SELECT FROM " + Tag.class.getName() + " WHERE idTagging = :idTagging");
+		query.setParameter("idTagging", idTagging);
+		try {
+			List<Tag> tagging = (List<Tag>) query.getResultList();
+			return tagging;
+		} catch(NoResultException e) {
+			return null;
+		}
+	}
 }

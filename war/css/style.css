@@ -49,22 +49,22 @@ body {
 }
 
 #main {
-	border-style: solid;
 	margin: 5px 5px 5px 5px;
 	padding: 5px 5px 5px 5px;
 	float: left;
+	width: 800px;
 }
 
 /* REGISTER */
 #register {
-	border-style: solid;
+	border-left-style: solid;
 	float: right;
 	width: 370px;
 	margin: 5px 5px 5px 5px;
 	padding: 5px 5px 5px 5px;
 }
 
-#register .label{
+#register .label {
 	float: left;
 	text-align: right;
 	margin: 7px 0px 5px 0px;
@@ -72,7 +72,7 @@ body {
 }
 
 #register p {
-	float:right;
+	float: right;
 	margin: 0px 0px 5px 0px;
 	font-size: 15px;
 	padding-left: 40px;
@@ -103,7 +103,6 @@ body {
 
 /* ------------------------------------------------ HOME.jsp */
 /* HOME */
-
 .add_evaluation_link {
 	background: #66CD00;
 	border-color: #000000;
@@ -114,7 +113,6 @@ body {
 	text-decoration: none;
 	padding: 5px 5px 5px 5px;
 	margin: -60px 20px 5px 0px;
-	
 }
 
 .evaluation {
@@ -127,19 +125,19 @@ body {
 
 .evaluation_info {
 	float: left;
+	margin-left: 10px;
 }
 
-.evaluation_ico{
-	float: right;
+.evaluation_ico {
+	float: left;
 }
 
-.evaluation_ico, li{
+.evaluation_ico,li {
 	list-style: none;
 }
 
 /* ------------------------------------------------ EVALUATION/ADD.jsp */
 /* EVALUATION/ADD */
-
 #evaluation_add .label {
 	float: left;
 	text-align: right;
@@ -147,27 +145,240 @@ body {
 	width: 200px;
 }
 
-#evaluation_add input , textarea{
-	float: right;
+#evaluation_add input,textarea {
+	float: left;
 	margin: 5px 0px 5px 0px;
 	width: 500px;
 }
+
 #evaluation_add .button {
 	background: #66CD00;
 	border-color: #000000;
 	border-style: solid;
 	color: #FFF;
+	font-size: medium;
 	margin: 5px 0px 5px 0px;
+	padding: 5px 5px 5px 5px;
+}
+
+#evaluation_add a {
+	background: #66CD00;
+	border-color: #000000;
+	border-style: solid;
+	border-width: 2px;
+	margin: 5px 0px 5px 10px;
+	padding: 5px 5px 5px 5px;
+	text-decoration: none;
+	color: #FFF;
+}
+
+#evaluation_useradd {
+	margin-left: 200px;
+	padding: 5px 5px 5px 5px;
+}
+
+#evaluation_useradd .label {
+	float: left;
+	width: auto;
+}
+
+#evaluation_useradd input,textarea {
+	float: none;
+	width: auto;
+}
+
+#evaluation_useradd .button {
+	background: #66CD00;
+	border-color: #000000;
+	border-style: solid;
+	color: #FFF;
+	font-size: medium;
+	margin: 5px 0px 5px 10px;
+	padding: 0px 5px 0px 5px;
+}
+
+#evaluation_userlist {
+	margin-left: 185px;
+}
+
+#evaluation_userlist table {
+	width: 100%;
+	border: 1px solid #cef;
+	margin: 1em 25px;
+	text-align: left;
+}
+
+#evaluation_userlist th {
+	font-weight: bold;
+	background-color: #acf;
+	border-bottom: 1px solid #cef;
+}
+
+#evaluation_userlist td,th {
+	padding: 4px 5px;
+}
+
+#evaluation_userlist .odd {
+	background-color: #def;
+}
+
+#evaluation_userlist .odd td {
+	border-bottom: 1px solid #cef;
+}
+
+/* ------------------------------------------------ TAGGING/INDEX.jsp */
+/* TAGGING/INDEX */
+#tagging {
+	clear: left;
+}
+
+#video {
+	float: left;
+	margin: 20px 20px 20px 20px;
+}
+
+#tag {
+	float: left;
+	height: 360px;
+	width: 390px;
+	margin: 20px 20px 20px 20px;
+}
+
+#tagging_list {
+	float: left;
+	margin: 20px 20px 20px 20px;
+	width: 80%;
+}
+
+#tag .label {
+	float: left;
+	text-align: right;
+	margin: 7px 0px 5px 0px;
+	width: 90px;
+}
+
+#tag .input .textarea {
+	float: left;
+	margin: 5px 0px 5px 0px;
+}
+
+#tag .button {
+	background: #66CD00;
+	border-color: #000000;
+	border-style: solid;
+	color: #FFF;
+	font-size: medium;
+	margin: 5px 0px 5px 0px;
+	padding: 5px 5px 5px 5px;
+	float: right;
+}
+
+#tagging_list table {
+	border: 1px solid #cef;
+	margin: 1em 25px;
+	text-align: left;
+	width: 100%;
+}
+
+#tagging_list th {
+	font-weight: bold;
+	background-color: #acf;
+	border-bottom: 1px solid #cef;
+}
+
+#tagging_list td,th {
+	padding: 4px 5px;
+}
+
+#tagging_list .odd {
+	background-color: #def;
+}
+
+#tagging_list .odd td {
+	border-bottom: 1px solid #cef;
+}
+/* ------------------------------------------------ TAGGING/REPORT.jsp */
+/* TAGGING/REPORT */
+#report {
+	width: 1000px;
+}
+#report_video {
+	float: left;
+	margin: 10px;
+}
+#report_info {
+	float: left;
+	margin: 10px;
+	padding-top: 10px;
+}
+
+#report_tagging_list {
+	margin: 10px;
+	clear: both;
+}
+
+#report_tagging_list table {
+	border: 1px solid #cef;
+	margin: 1em 25px;
+	text-align: left;
+	width: 800px;
+}
+
+#report_tagging_list th {
+	font-weight: bold;
+	background-color: #acf;
+	border-bottom: 1px solid #cef;
+}
+
+#report_tagging_list td,th {
+	padding: 4px 5px;
+}
+
+#report_tagging_list .odd {
+	background-color: #def;
+}
+
+#report_tagging_list .odd td {
+	border-bottom: 1px solid #cef;
+}
+
+#report_compilation {
+	margin: 10px;
+	clear: both;
+}
+
+#report_compilation table {
+	border: 1px solid #cef;
+	margin: 1em 25px;
+	text-align: left;
+	width: 800px;
+}
+
+#report_compilation th {
+	font-weight: bold;
+	background-color: #acf;
+	border-bottom: 1px solid #cef;
+}
+
+#report_compilation td,th {
+	padding: 4px 5px;
+}
+
+#report_compilation .odd {
+	background-color: #def;
+}
+
+#report_compilation .odd td {
+	border-bottom: 1px solid #cef;
 }
 /* ------------------------------------------------ INCLUDES */
 /*---------------------------- FOOTER.jsp */
 #footer {
 	border-top: solid;
-	border-width: 1px;
-	
 	height: 40px;
 	margin: 0px 20px 0px 20px;
 	padding-top: 5px;
+	clear: both;
 }
 
 #footer_links {
@@ -178,6 +389,7 @@ body {
 #footer_license {
 	float: left;
 }
+
 /*---------------------------- MENUBAR.jsp */
 /* MENUBAR */
 #menubar {
@@ -222,7 +434,7 @@ body {
 	color: #fff;
 }
 
-#menu li a:hover a:active{
+#menu li a:hover a:active {
 	background: #FFF;
 	color: #2B78E4;
 	border-color: #2B78E4;

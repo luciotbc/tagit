@@ -1,5 +1,6 @@
 package com.luciotbc.tagit.controller;
 
+import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 
 import javax.servlet.http.HttpServletRequest;
@@ -8,6 +9,7 @@ import javax.servlet.http.HttpSession;
 import com.luciotbc.tagit.dao.gae.DAO;
 import com.luciotbc.tagit.i18n.I18nMessages;
 import com.luciotbc.tagit.model.User;
+import com.luciotbc.tagit.util.EmailSender;
 import com.luciotbc.tagit.util.Encrypt;
 import com.luciotbc.tagit.util.Validators;
 
@@ -26,8 +28,9 @@ public class IndexController {
 	private Validator validator;
 	private I18nMessages i18n;
 	private HttpServletRequest req;
-	
-	public IndexController(DAO dao, Result result, Validator validator,	I18nMessages i18n, HttpServletRequest request) {
+
+	public IndexController(DAO dao, Result result, Validator validator,
+			I18nMessages i18n, HttpServletRequest request) {
 		this.dao = dao;
 		this.result = result;
 		this.validator = validator;
@@ -37,8 +40,9 @@ public class IndexController {
 
 	@Path("/")
 	public void index() {
-		if(getUser() != null){
-			result.use(Results.logic()).redirectTo(HomeController.class).index();
+		if (getUser() != null) {
+			result.use(Results.logic()).redirectTo(HomeController.class)
+					.index();
 		}
 	}
 
@@ -75,16 +79,22 @@ public class IndexController {
 		if (validator.hasErrors()) {
 			validator.onErrorForwardTo(this.getClass()).index();
 		} else {
-			dao.save(user);
-			user = dao.findUserByEmail(user.getEmail());
-			storeUser(user);
-			//TODO: Enviar email confirmando o registro
+			//manda email e cadastra
+			try {
+				EmailSender.sendRegistrationEmail(user.getEmail(), user.getName(), password);
+				dao.save(user);
+				user = dao.findUserByEmail(user.getEmail());
+				storeUser(user);
+			} catch (UnsupportedEncodingException e) {
+				String msg = i18n.i18n("error.register.user.send.email.fail");
+				validator.add(new ValidationMessage(msg, "error"));
+				validator.onErrorForwardTo(this.getClass()).index();
+			}
 
 			ArrayList<ValidationMessage> flash = new ArrayList<ValidationMessage>();
 			flash.add(new ValidationMessage(i18n.i18n("flash.user.joined.successfully"),"flash"));
 			result.include("flash", flash);
-//			result.use(Results.page()).redirectTo("/");
-			result.use(Results.logic()).redirectTo(HomeController.class).index();
+			result.use(Results.page()).redirectTo("/");
 		}
 	}
 
@@ -105,7 +115,8 @@ public class IndexController {
 			} else {
 				storeUser(userTemp);
 				ArrayList<ValidationMessage> flash = new ArrayList<ValidationMessage>();
-				flash.add(new ValidationMessage(i18n.i18n("flash.login.successfully"),"flash"));
+				flash.add(new ValidationMessage(i18n
+						.i18n("flash.login.successfully"), "flash"));
 				result.include("flash", flash);
 			}
 		}
@@ -113,7 +124,8 @@ public class IndexController {
 		if (validator.hasErrors()) {
 			validator.onErrorForwardTo(this.getClass()).index();
 		} else {
-			result.use(Results.logic()).redirectTo(HomeController.class).index();
+			result.use(Results.logic()).redirectTo(HomeController.class)
+					.index();
 		}
 	}
 
@@ -121,10 +133,10 @@ public class IndexController {
 		HttpSession session = req.getSession(true);
 		session.setAttribute("user", user);
 	}
-	
+
 	private User getUser() {
 		HttpSession session = req.getSession(false);
-		if( session == null ) {
+		if (session == null) {
 			return null;
 		}
 		User customer = (User) session.getAttribute("user");

@@ -3,7 +3,7 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
+<html lang="pt-br">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Tag-It</title>
@@ -53,8 +53,7 @@
 
 	<div id="content">
 		<div id="main">
-			<h1>O que é o Tag-It?</h1>
-			<p>Aqui vai ter informações sobre o Tag-It</p>
+			<jsp:include page="/WEB-INF/jsp/includes/introduction.jsp" />
 		</div>
 		<div id="register">
 			<jsp:include page="/WEB-INF/jsp/includes/msg_error.jsp" />
