@@ -80,7 +80,8 @@
 		<h1>Avaliação - ${evaluation.name}</h1>
 		<div id="video">
 			<div id="videoDiv" style="float: left;">
-				Carregando...
+				<img alt="Carregando" src="/images/icons/loading.gif">
+				<p>Se estiver demorando verifique a sua conexão com o <a href="http://www.youtube.com" title="YouTube">Youtube!</a></p>
 				<script type="text/javascript">
 					_run("${evaluation.video}");
 				</script>

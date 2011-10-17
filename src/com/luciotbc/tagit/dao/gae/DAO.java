@@ -7,6 +7,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.NoResultException;
 import javax.persistence.Query;
 
+import com.luciotbc.tagit.dao.DAOInterface;
 import com.luciotbc.tagit.model.Entity;
 import com.luciotbc.tagit.model.Evaluation;
 import com.luciotbc.tagit.model.Tag;
@@ -16,7 +17,8 @@ import com.luciotbc.tagit.model.User;
 import br.com.caelum.vraptor.ioc.Component;
 
 @Component
-public class DAO{
+public class DAO implements DAOInterface
+{
 
 	private static final ThreadLocal<EntityManager> ENTITY_MANAGER_STORE = new ThreadLocal<EntityManager>();
 

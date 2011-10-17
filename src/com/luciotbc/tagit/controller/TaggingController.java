@@ -1,6 +1,7 @@
 package com.luciotbc.tagit.controller;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -46,7 +47,8 @@ public class TaggingController {
 			String msg = i18n.i18n("error.tagging.evaluation.is.null");
 			validator.add(new ValidationMessage(msg, "error"));
 		}
-		Tagging tagging = dao.taggingFindByEvaluationIdAndUserID(id, getUser().getId());
+		Tagging tagging = dao.taggingFindByEvaluationIdAndUserID(id, getUser()
+				.getId());
 		if (tagging == null) {
 			String msg = i18n.i18n("error.tagging.is.null");
 			validator.add(new ValidationMessage(msg, "error"));
@@ -55,12 +57,12 @@ public class TaggingController {
 		if (validator.hasErrors()) {
 			validator.onErrorForwardTo(HomeController.class).index();
 		} else {
-			result.include("tagging",tagging);
+			result.include("tagging", tagging);
 			result.include("evaluation", evaluation);
 			result.include("tags", tags);
 		}
 	}
-	
+
 	@Restrict
 	@Path("/tagging/tag/add")
 	public void addTag(Tag tag, Long idEvaluation) {
@@ -76,14 +78,14 @@ public class TaggingController {
 			String msg = i18n.i18n("error.tag.tag.is.invalid");
 			validator.add(new ValidationMessage(msg, "error"));
 		}
-		if(tag.getIdTagging() == null){
+		if (tag.getIdTagging() == null) {
 			String msg = i18n.i18n("error.tag.tagging.is.null");
-			validator.add(new ValidationMessage(msg, "error"));			
+			validator.add(new ValidationMessage(msg, "error"));
 		}
 		if (validator.hasErrors()) {
 			validator.onErrorForwardTo(this.getClass()).index(idEvaluation);
 		} else {
-			if(tag.getId() == null){
+			if (tag.getId() == null) {
 				dao.save(tag);
 			} else {
 				Tag tagTemp = dao.findById(Tag.class, tag.getId());
@@ -94,7 +96,7 @@ public class TaggingController {
 			}
 		}
 		ArrayList<ValidationMessage> flash = new ArrayList<ValidationMessage>();
-		flash.add(new ValidationMessage(i18n.i18n("flash.tag.salved"),"flash"));
+		flash.add(new ValidationMessage(i18n.i18n("flash.tag.salved"), "flash"));
 		result.include("flash", flash);
 		result.redirectTo(this.getClass()).index(idEvaluation);
 	}
@@ -105,10 +107,12 @@ public class TaggingController {
 		Tag evaluation = dao.findById(Tag.class, id);
 		dao.delete(evaluation);
 		ArrayList<ValidationMessage> flash = new ArrayList<ValidationMessage>();
-		flash.add(new ValidationMessage(i18n.i18n("flash.evaluation.deleted"),"flash"));
+		flash.add(new ValidationMessage(i18n.i18n("flash.evaluation.deleted"),
+				"flash"));
 		result.include("flash", flash);
 		result.redirectTo(this.getClass()).index(idEvaluation);
 	}
+
 	@Restrict
 	@Path("/report/{id}")
 	public void report(Long id) {
@@ -126,13 +130,51 @@ public class TaggingController {
 		if (validator.hasErrors()) {
 			validator.onErrorForwardTo(HomeController.class).index();
 		} else {
-			result.include("tagging",tagging);
+			result.include("tagging", tagging);
+			result.include("evaluation", evaluation);
+			result.include("tags", tags);
+			result.include("user", getUser());
+		}
+	}
+
+	@Restrict
+	@Path("/report/tagging/{id}")
+	public void reporttagging(Long id) {
+		Tagging tagging = dao.findById(Tagging.class, id);
+		if (tagging == null) {
+			String msg = i18n.i18n("error.tagging.is.null");
+			validator.add(new ValidationMessage(msg, "error"));
+		}
+		Evaluation evaluation = dao.findById(Evaluation.class, tagging.getIdEvaluation());
+		if (evaluation == null) {
+			String msg = i18n.i18n("error.evaluation.is.null");
+			validator.add(new ValidationMessage(msg, "error"));
+		}
+		List<Tag> tags = dao.findTagsByTagging(tagging.getId());
+		if (validator.hasErrors()) {
+			validator.onErrorForwardTo(HomeController.class).index();
+		} else {
+			result.include("tagging", tagging);
 			result.include("evaluation", evaluation);
 			result.include("tags", tags);
 			result.include("user", getUser());
 		}
 	}
 	
+	@Restrict
+	@Path("/reports/{id}")
+	public void reports(Long id) {
+		List<User> users = dao.findUsersByEvaluation(id);
+		HashMap<User, Tagging> tagging = new HashMap<User, Tagging>();
+		for (User user : users) {
+			Tagging taggingTemp = dao.taggingFindByEvaluationIdAndUserID(id, user.getId());
+			if (taggingTemp != null) {
+				tagging.put(user, taggingTemp);
+			}
+		}
+		result.include("tagging", tagging);
+	}
+
 	private User getUser() {
 		HttpSession session = req.getSession(false);
 		if (session == null) {

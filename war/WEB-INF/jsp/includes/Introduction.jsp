@@ -11,6 +11,5 @@
 	<li>- Etiquetar um vídeo.</li>
 	<li>- Organizar grupos de avaliadores para realizar uma avaliação.</li>
 	<li>- Gerar a tabulação da etiquetagem.</li>
-	<li>- asdf as</li>
 </ul>
 

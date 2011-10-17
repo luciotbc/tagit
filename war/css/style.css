@@ -371,6 +371,13 @@ body {
 #report_compilation .odd td {
 	border-bottom: 1px solid #cef;
 }
+/* ------------------------------------------------ TAGGING/REPORT.jsp */
+/* TAGGING/REPORT */
+#reports li, a {
+	text-decoration: none;
+}
+
+
 /* ------------------------------------------------ INCLUDES */
 /*---------------------------- FOOTER.jsp */
 #footer {
@@ -442,10 +449,21 @@ body {
 /*---------------------------- MSG_ERROR.jsp */
 /* MSG_ERROR */
 #msg_error li {
+	border-bottom-color: red;
+	border-radius: 10px;
+	border-style: solid;
 	color: red;
+	padding: 10px;
 }
+
 /*---------------------------- MSG_FLASH.jsp */
 /* MSG_FLASH */
 #msg_flash li {
+	background-color: #A8D5F6;
+	border-bottom-color: blue;
+	border-radius: 10px;
+	border-style: solid;
 	color: blue;
+	padding: 10px;
+	width: 800px;
 }

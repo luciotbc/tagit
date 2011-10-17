@@ -15,7 +15,6 @@
 		var atts = { id : "ytPlayer" };
 		swfobject.embedSWF("http://www.youtube.com/v/" + videoID, divID, "240", "145", "9", null, null, params, atts);
 	}
-
 	google.load("swfobject", "2.1");
 	google.setOnLoadCallback(_run);
 </script>
@@ -35,7 +34,8 @@
 				<div class="evaluation">
 					<div class="evaluation_video">
 						<div id="${evaluation.id}" style="float: left;">
-							Carregando...
+							<img alt="Carregando" src="/images/icons/loading.gif">
+							<p>Se estiver demorando verifique a sua conexão com o <a href="http://www.youtube.com" title="YouTube">Youtube!</a></p>
 							<script type="text/javascript">
 								_run("${evaluation.video}", "${evaluation.id}");
 							</script>
@@ -44,8 +44,11 @@
 					<div class="evaluation_ico">
 						<ul>
 							<li><a href="/tagging/${evaluation.id}"> <img src="/images/icons/tagging.png" alt="Etiquetar" title="Etiquetar"></a></li>
-							<li><a href="/report/${evaluation.id}"><img src="/images/icons/report.png" alt="Relatório" title="Relatório"></a></li>
+							<c:if test="${evaluation.moderate != user.id}">
+								<li><a href="/report/${evaluation.id}"><img src="/images/icons/report.png" alt="Relatório" title="Relatório"></a></li>
+							</c:if>
 							<c:if test="${evaluation.moderate == user.id}">
+								<li><a href="/reports/${evaluation.id}"><img src="/images/icons/report.png" alt="Relatórios" title="Relatórios"></a></li>
 								<li><a href="/evaluation/edit/${evaluation.id}"><img src="/images/icons/edit.png" alt="Editar" title="Editar"></a></li>
 								<li><a href="/evaluation/delete/${evaluation.id}"><img src="/images/icons/delete.png" alt="Excluir" title="Excluir"></a></li>
 							</c:if>
