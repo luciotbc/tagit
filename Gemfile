@@ -21,10 +21,6 @@ group :assets do
 
   gem 'uglifier', '>= 1.0.3'
 
-  #support to haml
-  gem 'haml-rails'
-  #support a twitter bootstrap
-  gem 'bootstrap-sass'
 end
 
 gem 'jquery-rails'
