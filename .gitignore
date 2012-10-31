@@ -6,4 +6,10 @@
 *.swp
 
 # Ignorar todos os diretórios e arquivos em um diretório.
-tmp/**/* 
+tmp
+
+# Ignorar Arquivos de DB
+db/*.sqlite
+db/*.sqlite2
+db/*.sqlite3
+db/*.db
