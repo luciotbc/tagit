@@ -17277,3 +17277,94 @@ Served asset /application.js - 304 Not Modified (0ms)
 
 Started GET "/assets/favicon.ico" for 127.0.0.1 at 2012-10-30 19:30:46 -0200
 Served asset /favicon.ico - 304 Not Modified (0ms)
+
+
+Started GET "/assets/rails.png" for 127.0.0.1 at Tue Oct 30 22:55:23 -0200 2012
+Connecting to database specified by database.yml
+Served asset /rails.png - 404 Not Found (4ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/rails.png"):
+  actionpack (3.2.8) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.8) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.8) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.8) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.8) lib/rails/engine.rb:479:in `call'
+  railties (3.2.8) lib/rails/application.rb:223:in `call'
+  rack (1.4.1) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.8) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.1) lib/rack/handler/webrick.rb:59:in `service'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+  rack (1.4.1) lib/rack/handler/webrick.rb:13:in `run'
+  rack (1.4.1) lib/rack/server.rb:265:in `start'
+  railties (3.2.8) lib/rails/commands/server.rb:70:in `start'
+  railties (3.2.8) lib/rails/commands.rb:55
+  railties (3.2.8) lib/rails/commands.rb:50:in `tap'
+  railties (3.2.8) lib/rails/commands.rb:50
+  script/rails:6:in `require'
+  script/rails:6
+
+
+  Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (2.6ms)
+
+
+Started GET "/" for 127.0.0.1 at Tue Oct 30 22:55:25 -0200 2012
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.4ms)
+Compiled bootstrap.min.js  (0ms)  (pid 6942)
+Compiled application.js  (70ms)  (pid 6942)
+Completed 200 OK in 113ms (Views: 112.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/bootstrap-responsive.min.css?body=1" for 127.0.0.1 at Tue Oct 30 22:55:25 -0200 2012
+Served asset /bootstrap-responsive.min.css - 200 OK (2ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at Tue Oct 30 22:55:25 -0200 2012
+Served asset /application.css - 304 Not Modified (13ms)
+
+
+Started GET "/assets/bootstrap.min.css?body=1" for 127.0.0.1 at Tue Oct 30 22:55:25 -0200 2012
+Served asset /bootstrap.min.css - 200 OK (7ms)
+
+
+Started GET "/assets/bootstrap.min.js?body=1" for 127.0.0.1 at Tue Oct 30 22:55:25 -0200 2012
+Served asset /bootstrap.min.js - 200 OK (2ms)
+
+
+Started GET "/assets/tagit.css?body=1" for 127.0.0.1 at Tue Oct 30 22:55:25 -0200 2012
+Served asset /tagit.css - 200 OK (2ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at Tue Oct 30 22:55:25 -0200 2012
+Served asset /jquery.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at Tue Oct 30 22:55:25 -0200 2012
+Served asset /application.js - 304 Not Modified (52ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at Tue Oct 30 22:55:25 -0200 2012
+Served asset /jquery_ujs.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/glyphicons-halflings.png" for 127.0.0.1 at Tue Oct 30 22:55:26 -0200 2012
+Served asset /glyphicons-halflings.png - 200 OK (2ms)
+
+
+Started GET "/assets/favicon.ico" for 127.0.0.1 at Tue Oct 30 22:55:26 -0200 2012
+Served asset /favicon.ico - 200 OK (2ms)
