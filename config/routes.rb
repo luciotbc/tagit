@@ -1,6 +1,9 @@
 Tagit::Application.routes.draw do
-    root :to => 'welcome#index'
   
+  root :to => 'welcome#index'
+  
+  match 'contato' => 'welcome#contato' 
+    
   #get "welcome/index"
 
   # The priority is based upon order of creation:
