@@ -7,7 +7,7 @@
 
 # Ignorar todos os diretórios e arquivos em um diretório.
 tmp
-log
+*.log
 
 # Ignorar Arquivos de DB
 db/*.sqlite
