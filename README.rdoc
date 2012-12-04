@@ -7,6 +7,10 @@ The first version of the tag-it was developed using Java + VRaptor + Google App 
 == Goals
 - Develop all features in Ruby on Rails to have the same functionality as version 1.0.
 
+== Pre-Configure
+- Configure mail settings in config/environments/production.rb
+
+
 == License
 The MIT License (MIT)
 Copyright (c) 2012 @luciotbc
