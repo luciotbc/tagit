@@ -36387,3 +36387,12 @@ Processing by HomeController#index as HTML
   Rendered layouts/_navigation.html.erb (4.7ms)
   Rendered layouts/_messages.html.erb (0.1ms)
 Completed 200 OK in 36ms (Views: 34.1ms | ActiveRecord: 0.5ms)
+Connecting to database specified by database.yml
+
+
+Started GET "/" for 127.0.0.1 at 2012-12-04 23:02:47 -0200
+Processing by HomeController#welcome as HTML
+  Rendered home/welcome.html.erb within layouts/application (7.6ms)
+  Rendered layouts/_navigation.html.erb (5.5ms)
+  Rendered layouts/_messages.html.erb (1.9ms)
+Completed 200 OK in 520ms (Views: 519.6ms | ActiveRecord: 0.0ms)
