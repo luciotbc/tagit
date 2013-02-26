@@ -15,11 +15,11 @@ Role.create([
 
 puts 'SETTING UP DEFAULT USER LOGIN'
 
-user = User.create! :name => 'Admin User', :email => 'admin@tagit.com.br', :password => '1234abcd', :password_confirmation => '1234abcd'
+user = User.create! :name => 'Admin User', :email => 'admin@tagit.com', :password => '12345678', :password_confirmation => '12345678'
 puts 'New admin user created: ' << user.name
-user2 = User.create! :name => 'VIP User', :email => 'vip@tagit.com.br', :password => '1234abcd', :password_confirmation => '1234abcd'
+user2 = User.create! :name => 'VIP User', :email => 'vip@tagit.com', :password => '12345678', :password_confirmation => '12345678'
 puts 'New vip user created: ' << user2.name
-user3 = User.create! :name => 'Simple User', :email => 'user@tagit.com.br', :password => '1234abcd', :password_confirmation => '1234abcd'
+user3 = User.create! :name => 'Simple User', :email => 'user@tagit.com', :password => '12345678', :password_confirmation => '12345678'
 puts 'New simple user created: ' << user3.name
 
 user.add_role :admin

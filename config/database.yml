@@ -19,14 +19,10 @@ test: &test
   timeout: 5000
 
 production:
-  adapter: postgresql
-  encoding: utf8
-  reconnect: false
+  adapter: sqlite3
+  database: db/production.sqlite3
   pool: 5
-  database: <%=ENV['OPENSHIFT_APP_NAME']%>
-  username: <%=ENV['OPENSHIFT_DB_USERNAME']%>
-  password: <%=ENV['OPENSHIFT_DB_PASSWORD']%>
-  socket:   <%=ENV['OPENSHIFT_DB_SOCKET']%>
+  timeout: 5000
 
 cucumber:
   <<: *test
