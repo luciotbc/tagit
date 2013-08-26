@@ -1,9 +1,82 @@
-<div class="container-fluid">
-	<div class="hero-unit">					
-		<p>Já pensou em uma ferramenta linda feita com amor e carinho para auxiliar na etapa de etiquetagem do método de avaliação de comunicabilidade (MAC).</p>
-		<p>Coheça a Tag-It!</p>
-		<div class="video-container">
-			<iframe width="640" height="360" src="http://www.youtube.com/embed/lP0D5u3EMfA?feature=player_detailpage" frameborder="0" allowfullscreen></iframe>
-		</div>
-	</div>
-</div>
+
+
+<link href="css/style.css" rel="stylesheet">
+<script src="js/bootstrap.min.js"></script>
+
+
+<style>
+
+body {font:12px/17px Arial, Helvetica, sans-serif; color:#333; background:#ccc; padding:40px 20px 20px 20px;}
+
+
+.tabFrame {
+
+	width:101%;
+	height:900px;
+	border:0px;
+	scrolling:no;
+	frameborder:0;
+	allowTransparency:true;
+	overflow: hidden;
+}
+
+</style>
+
+
+<div class="note-tabs"> <!-- Homepage Tabs-->
+
+	<ul class="nav nav-tabs">
+		<li class="active"><a href="#navbar-fixed-Start" data-toggle="tab"><strong>Comece Aqui -&gt;</strong></a></li>
+		<li><a href="#navbar-fixed-Organize" data-toggle="tab"><strong>Organize seus projetos -&gt;</strong></a></li>
+		<li><a href="#navbar-fixed-Tags" data-toggle="tab"><strong>Crie Etiquetas -&gt;</strong></a></li>
+		<li><a href="#navbar-fixed-Consolidate" data-toggle="tab"><strong>Consolide Sua Avaliação -&gt;</strong></a></li>
+	</ul>
+
+	
+
+	<div class="tab-content">
+
+		<!-- Tab 1 - Comece Aqui -->
+
+		<div class="tab-pane active" id="navbar-fixed-Start">
+			<iframe class = "tabFrame" src="StartScreen.html"></iframe>
+		</div><!-- #navbar-fixed-html -->
+		
+
+		<!-- Tab 2 - Meus Projetos -->
+		
+		<div class="tab-pane" id="navbar-fixed-Organize">
+			<iframe class = "tabFrame" src="OrganizeScreen.html"></iframe>
+	    </div><!-- /#navbar-fixed-css -->
+
+
+		<!-- Tab 3 - Etiquetagem -->
+
+		<div class="tab-pane" id="navbar-fixed-Tags">
+			<iframe class = "tabFrame"  src="TagScreen.html"></iframe>
+	    </div>
+
+
+		<!-- Tab 4 - Consolidação -->
+
+
+		<div class="tab-pane" id="navbar-fixed-Consolidate">
+			<iframe class = "tabFrame"  src="ConsolidateScreen.html"></iframe>
+		</div><!-- /#navbar-fixed-css -->
+
+	</div><!-- .tab-content -->
+
+</div><!-- /.note-tabs -->
+
+
+	
+
+
+<!-- ==============================================
+		 JavaScript below! 															-->
+
+  	<script>window.jQuery || document.write('<script src="js/jquery-1.7.1.min.js"><\/script>')</script>
+
+<!-- Bootstrap JS: compiled and minified -->
+
+

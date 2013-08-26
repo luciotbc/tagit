@@ -1,4 +1,6 @@
+
 Tagit::Application.routes.draw do
+
 
   authenticated :user do
     root :to => 'home#index'
@@ -7,4 +9,9 @@ Tagit::Application.routes.draw do
   root :to => "home#welcome"
   devise_for :users
   resources :users
+
+  resources :tags
+  root to: "tags#index"
+
+  
 end

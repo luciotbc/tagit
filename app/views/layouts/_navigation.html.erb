@@ -10,9 +10,9 @@
 			<div class="nav-collapse collapse">
 				<div class= "pull-right">
 					<% if user_signed_in? %>
-					<%= link_to '<i class="icon-signout"></i> Signout'.html_safe, destroy_user_session_path, :method=>'delete', :class=>'btn btn-small', :title => 'Signout', :rel => 'tooltip' %>
-					<% else %>
-						<%= link_to '<i class="icon-signin"></i> Signin'.html_safe, new_user_session_path, :class=>'btn btn-small', :title => 'Signin', :rel => 'tooltip' %>
+					<%= link_to '<i class="icon-signout"></i> Log Out'.html_safe, destroy_user_session_path, :method=>'delete', :class=>'btn btn-small', :title => 'Signout', :rel => 'tooltip' %>
+						<% else %>
+						<%= link_to '<i class="icon-signin"></i> Log In'.html_safe, new_user_session_path, :class=>'btn btn-small', :title => 'Signin', :rel => 'tooltip' %>
 						<!-- <form class="navbar-form pull-right">
 							<input class="span2" type="text" placeholder="Email">
 							<input class="span2" type="password" placeholder="Senha">

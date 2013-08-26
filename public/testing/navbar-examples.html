@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    
+<!-- Main stylesheet imports bootstrap css and adds custom -->
+    <link href="css/style.css" rel="stylesheet">
+    
+    <style>
+    	/* To keep short panes open decently tall */
+    	.tab-pane {min-height: 500px;}
+    </style>
+
+	
+		
+  </head>
+
+  <body>
+
+			<div class="note-tabs"> <!-- Tabs-->
+				<ul class="nav nav-tabs">
+					<li class="active"><a href="#navbar-fixed-html" data-toggle="tab"><strong>The Markup</strong></a></li>
+					<li><a href="#navbar-fixed-css" data-toggle="tab"><strong>The CSS</strong></a></li>
+					<li><a href="#navbar-fixed-js" data-toggle="tab"><strong>The JavaScript</strong></a></li>
+				</ul>
+				<div class="tab-content">
+					<div class="tab-pane active" id="navbar-fixed-html">
+						HTML	
+					</div><!-- #navbar-fixed-html -->
+					
+					<div class="tab-pane" id="navbar-fixed-css">
+						CSS
+					</div><!-- /#navbar-fixed-css -->
+
+					<div id="navbar-fixed-js" class="tab-pane">
+						JAVASCRIPT
+					</div><!-- #navbar-fixed.js -->
+				</div><!-- .tab-content -->
+			</div><!-- /.note-tabs -->
+			
+			
+
+
+    
+
+<!-- ==============================================
+		 JavaScript below! 															-->
+
+  	<script>window.jQuery || document.write('<script src="js/jquery-1.7.1.min.js"><\/script>')</script>
+
+<!-- Bootstrap JS: compiled and minified -->
+    <script src="js/bootstrap.min.js"></script>
+
+    
+
+
+  </body>
+</html>
