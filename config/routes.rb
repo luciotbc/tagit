@@ -2,7 +2,8 @@
 Tagit::Application.routes.draw do
 
 
-  resources :projects
+root :to => "projects#index"
+resources :projects
 
 
   authenticated :user do
