@@ -10,9 +10,9 @@
 			<div class="nav-collapse collapse">
 				<div class= "pull-right">
 					<% if user_signed_in? %>
-					<%= link_to '<i class="icon-signout"></i> Log Out'.html_safe, destroy_user_session_path, :method=>'delete', :class=>'btn btn-small', :title => 'Signout', :rel => 'tooltip' %>
+					<%= link_to '<i class="icon-signout"></i> Log Out'.html_safe, destroy_user_session_path, :method=>'delete', :class=>'btn btn-small', :title => 'Sair', :rel => 'tooltip' %>
 						<% else %>
-						<%= link_to '<i class="icon-signin"></i> Log In'.html_safe, new_user_session_path, :class=>'btn btn-small', :title => 'Signin', :rel => 'tooltip' %>
+						<%= link_to '<i class="icon-signin"></i> Entrar'.html_safe, new_user_session_path, :class=>'btn btn-small', :title => 'Signin', :rel => 'tooltip' %>
 						<!-- <form class="navbar-form pull-right">
 							<input class="span2" type="text" placeholder="Email">
 							<input class="span2" type="password" placeholder="Senha">
@@ -23,7 +23,7 @@
 				<ul class="nav">
 					<% if user_signed_in? %>
 					<li>
-						<%= link_to('Edit account', edit_user_registration_path) %>
+						<%= link_to('Editar Conta', edit_user_registration_path) %>
 					</li>
 					<% if current_user.has_role? :admin %>
 					<li>
@@ -32,7 +32,7 @@
 					<% end %>
 					<% else %>
 					<li>
-						<%= link_to('Sign up', new_user_registration_path)  %>
+						<%= link_to('Registrar', new_user_registration_path)  %>
 					</li>
 					<% end %>
 				</ul>

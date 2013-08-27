@@ -1,3 +1,134 @@
-<h3>Home</h3><% @users.each do |user| %>
+
+<script type="text/javascript">
+
+
+$(document).ready(function() {	
+
+	$('a[name=modal]').click(function(e) {
+		e.preventDefault();
+		
+		var id = $(this).attr('href');
+	
+		var maskHeight = $(document).height();
+		var maskWidth = $(window).width();
+	
+		$('#mask').css({'width':maskWidth,'height':maskHeight});
+
+		$('#mask').fadeIn(1000);	
+		$('#mask').fadeTo("slow",0.8);	
+	
+		//Get the window height and width
+		var winH = $(window).height();
+		var winW = $(window).width();
+              
+		//$(id).css('top',  winH/2-$(id).height()/2);
+		$(id).css('left', winW/2-$(id).width()/2);
+	
+		$(id).fadeIn(2000); 
+	
+	});
+	
+	$('.window .close').click(function (e) {
+		e.preventDefault();
+		
+		$('#mask').hide();
+		$('.window').hide();
+	});		
+	
+	$('#mask').click(function () {
+		$(this).hide();
+		$('.window').hide();
+	});			
+	
+});
+
+</script>
+
+</style>
+</head>
+<body>
+
+<div id="boxes">
+
+<div id="dialog" class="window">
+
+
+					<fieldset class"video" id="video" width="100%">
+						<a href="#" class="close">[X]</a>
+						<legend>Video</legend>
+
+						<br />
+
+						<dl>
+							<dt><label for="comments">Projeto:</label></dt>
+							<dd><input type="text" name="comments" id="comments" rows="5" cols="60"></textarea></dd>
+						</dl>
+
+						<dl>
+							<dt><label for="upload">Video:</label></dt>
+							<dd><input type="file" name="upload" id="upload" /></dd>
+						</dl>
+
+						<dl>
+							<dt><label for="test">Confirmar:</label></dt>
+							<dd><input type="submit" name="submit" id="submit" value="Submit" /></dd>
+						</dl>
+
+						
+					</fieldset>
+</div>
+  
+
+<div class="tab-pane" id="navbar-fixed-Organize">
+			
+
+	<div >
+	        <div id="folders" style="">
+	          
+	          <ul class="clearfix">
+	            <li class="folder new">
+	              <a href="#dialog" name="modal" ></a>
+	            </li>
+	            
+	            <li class="folder" data-folderid="13a0b88d7c">
+	            <a href="#" data-action="open-folder">
+	                <h3 class="folder-name">Tag-It</h3>
+	              </a>
+	              <div class="bottom clearfix proxima-thin">
+	                <div class="left">
+	                  Project Description
+	                </div>
+	                <div class="btn-group dropdown pull-right">
+	                  <a class="btn-link dropdown-toggle" data-toggle="dropdown" href="#">
+	                    <div class="j-icon j-icon-gear-black"></div>
+	                  </a>
+	                  <ul class="dropdown-menu pull-right">
+	                    <div class="dropdown-caret"></div>
+	                    <li class="default rename"><a data-action="rename-folder" href="#"><div class="j-icon j-icon-rename"></div>Rename</a></li>
+	                    <li class="default download"><a target="_blank" href="/api/v1/folder/13a0b88d7c/htmlzip"><div class="j-icon j-icon-download"></div>Export Project</a></li>
+	                    <li class="divider"></li>
+	                    <li class="default errors delete"><a data-action="delete-folder" href="#"><div class="j-icon j-icon-delete"></div>Delete</a></li>
+	                  </ul>
+	                </div>
+
+	            </li>
+	            
+	          </ul>
+	        </div>
+	    </div>
+	</div>
+
+
+    
+	</div><!-- /#navbar-fixed-css -->
+
+</div>
+
+
+</body>
+</html>
+
+
+<!--<h3>Home</h3><% @users.each do |user| %>
   <p>User: <%=link_to user.name, user %></p>
-<% end %>
+<% end %>--?>

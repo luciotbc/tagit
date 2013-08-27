@@ -1,0 +1,70 @@
+
+body {font:12px/17px Arial, Helvetica, sans-serif; color:#333; background:#ccc; padding:0px 0px 0px 0px;}
+
+
+select.icon-menu option {
+background-repeat:no-repeat;
+background-position:bottom left;
+padding-left:30px;
+}
+
+video.myTaggedVideo {
+	width: 97%;
+	border: 0px solid black;
+}
+
+#colVideo {
+
+min-width:400px;
+width:40%;
+
+}
+
+#colTag {
+
+min-width:290px;
+width:40%;
+
+}
+
+#colUser {
+
+min-width:140px;
+width:20%;
+
+}
+
+
+
+.video-container {
+	min-width: 474px;
+	/**display: inline-block;*/
+	text-align: center;
+}
+
+p {
+	font: 14px Arial;
+}
+
+table.tableTagScreen{
+	/*table-layout:fixed*/
+
+}
+
+table.tableTagScreen td{
+	overflow:hidden;
+	vertical-align: top;
+}
+
+form.newTag input{
+	float: right;
+	margin-right: 2px;
+	width:50%;
+
+}
+
+.full-tab-pane{
+
+	min-width: 800px;
+
+}
