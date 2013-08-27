@@ -1,51 +1,3 @@
-<script type="text/javascript">
-
-
-$(document).ready(function() {	
-
-	$('a[name=modal]').click(function(e) {
-		e.preventDefault();
-		
-		var id = $(this).attr('href');
-	
-		var maskHeight = $(document).height();
-		var maskWidth = $(window).width();
-	
-		$('#mask').css({'width':maskWidth,'height':maskHeight});
-
-		$('#mask').fadeIn(1000);	
-		$('#mask').fadeTo("slow",0.8);	
-	
-		//Get the window height and width
-		var winH = $(window).height();
-		var winW = $(window).width();
-              
-		//$(id).css('top',  winH/2-$(id).height()/2);
-		$(id).css('left', winW/2-$(id).width()/2);
-	
-		$(id).fadeIn(2000); 
-	
-	});
-	
-	$('.window .close').click(function (e) {
-		e.preventDefault();
-		
-		$('#mask').hide();
-		$('.window').hide();
-	});		
-	
-	$('#mask').click(function () {
-		$(this).hide();
-		$('.window').hide();
-	});			
-	
-});
-
-</script>
-
-</style>
-</head>
-<body>
 
 <div id="boxes">
 
@@ -54,23 +6,36 @@ $(document).ready(function() {
 
 					
 						<a href="#" class="close">[X]</a>
-						<legend>Video</legend>
+						<legend>Novo Projeto/Video</legend>
 
 						<br />
 
 						<dl>
-							<dt><label for="comments">Projeto:</label></dt>
-							<dd><input type="text" name="comments" id="comments" rows="5" cols="60"></textarea></dd>
+							<dt><label for="project">Projeto:</label></dt>
+							<dd><input type="text" name="project" id="project" cols="60"></textarea></dd>
 						</dl>
 
+						<dl>
+							<dt><label for="comments">Descrição:</label></dt>
+							<dd><textarea name="comments" id="comments" rows="3" width="400px"></textarea></dd>
+						</dl>
+							
+						<dl>
+							<dt><label for="comments">Descrição:</label></dt>
+							<dd>	<% form_for :project, :html => { :multipart => true } do |f| %>
+							  <%= f.file_field :video%>
+							<% end %>
+							</dd>
+						</dl>
+
+						
 						<dl>
 							<dt><label for="upload">Video:</label></dt>
 							<dd><input type="file" name="upload" id="upload" /></dd>
 						</dl>
 
 						 <dl>
-				        	<dt><label for="test">Sample Button:</label></dt>
-				            <dd><button type="button" name="test" id="test">Confirm</button></dd>
+				            <dd><button class="btn btn-inverse" type="button" name="test" id="test">Criar Projeto</button></dd>
 				        </dl>
 
 						
@@ -117,10 +82,51 @@ $(document).ready(function() {
 </div>
 
 
-</body>
-</html>
-
-
 <!--<h3>Home</h3><% @users.each do |user| %>
   <p>User: <%=link_to user.name, user %></p>
-<% end %>--?>
+<% end %>-->
+
+<script type="text/javascript">
+
+
+$(document).ready(function() {	
+
+	$('a[name=modal]').click(function(e) {
+		e.preventDefault();
+		
+		var id = $(this).attr('href');
+	
+		var maskHeight = $(document).height();
+		var maskWidth = $(window).width();
+	
+		$('#mask').css({'width':maskWidth,'height':maskHeight});
+
+		$('#mask').fadeIn(1000);	
+		$('#mask').fadeTo("slow",0.8);	
+	
+		//Get the window height and width
+		var winH = $(window).height();
+		var winW = $(window).width();
+              
+		//$(id).css('top',  winH/2-$(id).height()/2);
+		$(id).css('left', winW/2-$(id).width()/2);
+	
+		$(id).fadeIn(2000); 
+	
+	});
+	
+	$('.window .close').click(function (e) {
+		e.preventDefault();
+		
+		$('#mask').hide();
+		$('.window').hide();
+	});		
+	
+	$('#mask').click(function () {
+		$(this).hide();
+		$('.window').hide();
+	});			
+	
+});
+
+</script>

@@ -2,6 +2,9 @@
 Tagit::Application.routes.draw do
 
 
+  resources :projects
+
+
   authenticated :user do
     root :to => 'home#index'
   end
