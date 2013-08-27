@@ -3,7 +3,15 @@
 
 <script language="javascript" type="text/javascript" src="niceforms.js"></script>
 <link rel="stylesheet" type="text/css" media="all" href="niceforms-default.css" />
+<link rel="stylesheet" href="examples/css/sample.css" />
+<script src="js/jquery/jquery-1.9.0.min.js"></script>
+<!-- <msdropdown> -->
+<link rel="stylesheet" type="text/css" href="css/msdropdown/dd.css" />
+<script src="js/msdropdown/jquery.dd.js"></script>
+<!-- </msdropdown> -->
 
+<link rel="stylesheet" type="text/css" href="css/msdropdown/skin2.css" />
+<link rel="stylesheet" type="text/css" href="css/msdropdown/flags.css" />
 <script language="Javascript">
 
 function seekTime(varSeconds)
@@ -27,73 +35,8 @@ function setCurrentTime(varInputText)
 </script>
 
 
-<style>
+<link rel="stylesheet" type="text/css" href="css/tagscreen.css">
 
-
-body {font:12px/17px Arial, Helvetica, sans-serif; color:#333; background:#ccc; padding:0px 0px 0px 0px;}
-
-video.myTaggedVideo {
-	width: 97%;
-	border: 0px solid black;
-}
-
-#colVideo {
-
-min-width:400px;
-width:40%;
-
-}
-
-#colTag {
-
-min-width:290px;
-width:40%;
-
-}
-
-#colUser {
-
-min-width:140px;
-width:20%;
-
-}
-
-
-
-.video-container {
-	min-width: 474px;
-	/**display: inline-block;*/
-	text-align: center;
-}
-
-p {
-	font: 14px Arial;
-}
-
-table.tableTagScreen{
-	/*table-layout:fixed*/
-
-}
-
-table.tableTagScreen td{
-	overflow:hidden;
-	vertical-align: top;
-}
-
-form.newTag input{
-	float: right;
-	margin-right: 2px;
-	width:50%;
-
-}
-
-.full-tab-pane{
-
-	min-width: 800px;
-
-}
-
-</style>
 
 <div class="full-tab-pane" id="navbar-fixed-Tags">
 
@@ -148,25 +91,43 @@ form.newTag input{
 
 </div>
 <img href="/assets/05.png"></img>
-							<dt><label for="comments">Start Time:</label></dt>
-							<dd><input onclick ="setCurrentTime(this)" type="text" value="12" ></input></dd>
+
+
+							<label for="some_countries"></label>
+							
+							<dt><label for="comments">Etiquetas</label></dt>
+							<dd><select id="Tags" name="tags" style="z-index:4000; width:250px;">
+							        <option value="" data-description="Escolha sua etiqueta">Escolha sua etiqueta</option>
+							        <option value="Tag01" data-image="assets/01.png" data-description="Tag 01">Tag 01</option>
+							        <option value="Tag02" data-image="assets/02.png" data-description="Tag 02">Tag 01</option>
+							        <option value="Tag03" data-image="assets/03.png" data-description="Tag 03">Tag 01</option>
+							        <option value="Tag04" data-image="assets/04.png" data-description="Tag 04">Tag 01</option>
+							        <option value="Tag05" data-image="assets/05.png" data-description="Tag 05">Tag 01</option>
+
+							</select>
+							</dd>
 							<br />
-							<dt><label for="comments">End Time:</label></dt>
+
+							<dt><label for="comments">Início:</label></dt>
+							<dd><input id="start" onclick ="setCurrentTime(this)" type="text" value="12" ></input></dd>
+							<br />
+							<dt><label id="finish" for="comments">Fim:</label></dt>
 							<dd><input onclick="setCurrentTime(this)" type="text" value="12" ></input></dd>
 							<br />
-							<dt><label for="comments">Message:</label></dt>
+							<dt><label for="comments">Observação:</label></dt>
 							<dd><textarea name="comments" id="comments" rows="5" cols="60"></textarea></dd>
 						</dl>
-						<dl>
+						<!-- <dl>
 							<dt><label for="upload">Upload a File:</label></dt>
-							<dd><input type="file" name="upload" id="upload" /></dd>
+							<dd><input type="dropdown" name="upload" id="upload" /></dd>
 						</dl>
 						<dl>
 							<dt><label for="test">Sample Button:</label></dt>
 							<dd><button type="button" onclick="seekTime(12)" name="test" id="test">Go to 12 seconds!</button></dd>
 						<br />
-							<dt><label for="test">Sample Button:</label></dt>
-							<dd><input type="submit" name="submit" id="submit" value="Submit" /></dd>
+							<dt><label for="test">Sample Button:</label></dt> -->
+
+							<dd><input type="submit" name="submit" id="submit" value="Enviar" /></dd>
 						</dl>
 
 						
@@ -239,3 +200,52 @@ form.newTag input{
 </div>  	
 
 <script>window.jQuery || document.write('<script src="js/jquery-1.7.1.min.js"><\/script>')</script>
+
+<script>
+function createByJson() {
+	var jsonData = [					
+					{description:'Choos your payment gateway', value:'', text:'Payment Gateway'},					
+					{image:'assets/01.png', description:'Tag 01', value:'01', text:'Tag 01'},
+					{image:'assets/02.png', description:'Tag 02', value:'02', text:'Tag 02'},
+					{image:'assets/03.png', description:'Tag 03', value:'03', text:'Tag 03'},
+					{image:'images/msdropdown/icons/Cash-56.png', description:'Sorry not available...', value:'cash', text:'Cash on devlivery', disabled:true},
+					{image:'images/msdropdown/icons/Visa-56.png', description:'All you need...', value:'Visa', text:'Visa'},
+					{image:'images/msdropdown/icons/Paypal-56.png', description:'Pay and get paid...', value:'Paypal', text:'Paypal'}
+					];
+	$("#byjson").msDropDown({byJson:{data:jsonData, name:'payments2'}}).data("dd");
+}
+$(document).ready(function(e) {		
+	//no use
+	try {
+		var pages = $("#pages").msDropdown({on:{change:function(data, ui) {
+												var val = data.value;
+												if(val!="")
+													window.location = val;
+											}}}).data("dd");
+
+		var pagename = document.location.pathname.toString();
+		pagename = pagename.split("/");
+		pages.setIndexByValue(pagename[pagename.length-1]);
+		$("#ver").html(msBeautify.version.msDropdown);
+	} catch(e) {
+		//console.log(e);	
+	}
+	
+	$("#ver").html(msBeautify.version.msDropdown);
+		
+	//convert
+	$("select").msDropdown({roundedBorder:false});
+	createByJson();
+	$("#tech").data("dd");
+});
+function showValue(h) {
+	console.log(h.name, h.value);
+}
+$("#tech").change(function() {
+	console.log("by jquery: ", this.value);
+})
+//
+</script>
+
+</body>
+</html>

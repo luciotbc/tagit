@@ -1,7 +1,12 @@
-<style>
-
 
 body {font:12px/17px Arial, Helvetica, sans-serif; color:#333; background:#ccc; padding:0px 0px 0px 0px;}
+
+
+select.icon-menu option {
+background-repeat:no-repeat;
+background-position:bottom left;
+padding-left:30px;
+}
 
 video.myTaggedVideo {
 	width: 97%;
@@ -63,5 +68,3 @@ form.newTag input{
 	min-width: 800px;
 
 }
-
-</style>
